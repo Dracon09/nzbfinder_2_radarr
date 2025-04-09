@@ -24,7 +24,7 @@ This Python script automates the process of scanning NZBFinder RSS feeds for new
 │   ├── config.yaml          # Script configuration (patterns, intervals, etc.)
 │   ├── scanned_guids.txt    # Tracked GUIDs to prevent re-processing
 │   └── invalid_movie.log    # Logs movies rejected by Radarr
-├── main.py                  # Main script
+├── NZBFinder_Copilot.py                  # Main script
 ├── Dockerfile               # (Optional) Docker setup
 └── README.md                # This file
 ```
@@ -52,9 +52,9 @@ debug_mode: false
 debug_logging: false
 use_keyboard: true
 movie_folder: /data/media/movies
-quality_profile: RARBG1080p265Pyhton
+quality_profile: 1080p265
 match_patterns:
-  - "^(?=.*\b1080p\b)(?=.*\b(?:WEBRip|BluRay)\b)(?=.*\b-LAMA\b).*"
+  - "^(?=.*\b1080p\b)(?=.*\b(?:WEBRip|BluRay)\b)(?=.*\b-Provider\b).*"
 not_match_patterns:
   - "(?=.*KOREAN.*)"
   - "(?=.*FRENCH.*)"
@@ -97,7 +97,7 @@ docker run -d --name nzbfinder-radarr \
 ## 🧪 Example Output
 
 ```
-✅ MATCHED: Example.Movie.2025.1080p.WEBRip-LAMA
+✅ MATCHED: Example.Movie.2025.1080p.WEBRip-Provider
 ✅ IMDb ID tt1234567 - Added: [], Exists: [[Barbie: Dreamhouse]], Invalid: [], Excluded: []
 📊 Summary for this run: Added: 0, Exists: 3, Invalid: 1, Excluded: 0
 ```
@@ -109,8 +109,3 @@ docker run -d --name nzbfinder-radarr \
 - Discord/webhook notifications
 - Retry logic for failed IMDb lookups
 
----
-
-**Maintainer:** _you!_
-
-Happy automating 🎉
