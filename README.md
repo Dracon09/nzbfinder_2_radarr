@@ -24,7 +24,7 @@ This Python script automates the process of scanning NZBFinder RSS feeds for new
 │   ├── config.yaml          # Script configuration (patterns, intervals, etc.)
 │   ├── scanned_guids.txt    # Tracked GUIDs to prevent re-processing
 │   └── invalid_movie.log    # Logs movies rejected by Radarr
-├── NZBFinder_Copilot.py                  # Main script
+├── NZBFinder_Copilot.py     # Main script
 ├── Dockerfile               # (Optional) Docker setup
 └── README.md                # This file
 ```
